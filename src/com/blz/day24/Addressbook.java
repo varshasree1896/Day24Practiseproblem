@@ -9,6 +9,18 @@ public class AddressBook {
     private static ArrayList<Contacts> list = new ArrayList<Contacts>();
 
     /**
+     * Call method to check entry in contact by searching city
+     */
+    private void searchPersonByCity() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter city to check entry in Contacts: ");
+        String city = sc.nextLine();
+        Stream<Contacts> check = list.stream().filter(i -> i.getCity().equals(city));
+        check.forEach(str -> System.out.println(str.toString()));
+    }
+
+
+    /**
      * Call method to check duplicate entry
      */
     private void checkDuplicateEntry() {
